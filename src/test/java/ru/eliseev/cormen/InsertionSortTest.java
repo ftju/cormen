@@ -4,10 +4,13 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Unit test for simple App.
  */
-public class AppTest 
+public class InsertionSortTest
     extends TestCase
 {
     /**
@@ -15,7 +18,7 @@ public class AppTest
      *
      * @param testName name of the test case
      */
-    public AppTest( String testName )
+    public InsertionSortTest(String testName )
     {
         super( testName );
     }
@@ -25,7 +28,7 @@ public class AppTest
      */
     public static Test suite()
     {
-        return new TestSuite( AppTest.class );
+        return new TestSuite( InsertionSortTest.class );
     }
 
     /**
@@ -33,6 +36,8 @@ public class AppTest
      */
     public void testApp()
     {
-        assertTrue( true );
+        List<Integer> integers = Arrays.asList(2, 6, 1, 0, 10);
+        InsertionSort.sort(integers);
+        System.out.println(integers);
     }
 }
