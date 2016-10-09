@@ -6,31 +6,52 @@ public class QuickSort {
         return array;
     }
 
-    private static int partition(int[] array, int q, int p){
+    private static int partition(int[] array, int q, int p) {
         int x = array[p];
-        int i = q-1;
-        int j = p-1;
-        for (int k = q;k<=p-1;k++){
-            if (array[k] < x){
+        int i = q - 1;
+        int j = p;
+
+        int k = q;
+        while(true){
+            if(j-i==1){
+                break;
+            }
+            if(array[k] <= x){
                 i++;
+                k++;
             }else{
-                int swap = array[k];
-                array[k] = array[j];
-                array[j]=swap;
                 j--;
+                swap(array, k, j);
             }
         }
-        int swap = array[p];
-        array[p]=array[j];
-        array[j]=swap;
+        swap(array,j,p);
         return j;
     }
 
+    private static int partition1(int[] array, int q, int p) {
+        int x = array[p];
+        int i = q - 1;
+        for(int j = q; j < p; j++){
+            if(array[j]<=x){
+                i++;
+                swap(array,j,i);
+            }
+        }
+        swap(array,i+1,p);
+        return i+1;
+    }
+
+    private static void swap(int[] array, int i, int j){
+        int swap = array[i];
+        array[i] = array[j];
+        array[j] = swap;
+    }
+
     public static void quicksort(int[] array,int q, int p){
-        if(q==p){
+        if(q>=p){
             return;
         }
-        int partition = partition(array, q, p);
+        int partition = partition1(array, q, p);
         quicksort(array,q,partition-1);
         quicksort(array, partition+1,p);
     }
