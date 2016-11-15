@@ -16,4 +16,18 @@ public class InsertionSort {
             }
         }
     }
+
+    public static void sort(int[] a, int l, int r) {
+        for (int i = l ; i <= r; i++) {
+            for (int j = i-1; j >= l; j--) {
+                if(a[j+1]<a[j]){
+                    int swap = a[j+1];
+                    a[j+1] = a[j];
+                    a[j] = swap;
+                }else{
+                    break;
+                }
+            }
+        }
+    }
 }

@@ -1,6 +1,6 @@
 package ru.eliseev.cormen;
 
-public class Select {
+public class SelectNLogN {
     public static int selectNLogN(int[] a, int i) {
         int l = 0;
         int r = a.length - 1;
@@ -8,10 +8,10 @@ public class Select {
             int p = partition(a, l, r);
             if (p == i) return a[p];
             if (p > i) {
-                r = p-1;
+                r = p - 1;
                 continue;
             }
-            l = p+1;
+            l = p + 1;
         }
     }
 
