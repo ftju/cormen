@@ -24,7 +24,7 @@ public class BinarySearchTest extends TestCase {
      */
     public static Test suite()
     {
-        return new TestSuite( HeapSortTest.class );
+        return new TestSuite( BinarySearchTest.class );
     }
 
     /**

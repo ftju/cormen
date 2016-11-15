@@ -27,7 +27,7 @@ public class MaxSubarrayNTest extends TestCase
      */
     public static Test suite()
     {
-        return new TestSuite( InsertionSortTest.class );
+        return new TestSuite( MaxSubarrayNTest.class );
     }
 
     /**
